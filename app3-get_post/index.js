@@ -5,8 +5,15 @@ var port = 3000;
 var app = express();
 app.use(bodyParser.json());
 
+app.get('/api/items', (req,res) => {
+	res.status(200).send(items);
+})
 
-
+app.post('/api/items', (req,res) => {
+	const postItems = req.body;
+	items.push(postItems);
+	res.status(200).send(items);
+})
 
 
 
